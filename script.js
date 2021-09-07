@@ -1,26 +1,24 @@
 const containerInputs = document.querySelector('.container-user-inputs').childNodes
 const previewBorder = document.querySelector('.preview-border')
 const btnCopy = document.querySelector('.btn-copy')
+const main = document.querySelector('main')
 
-containerInputs[1].addEventListener('change', (e) => {
-    let userInput = e.target.value
-    previewBorder.style.borderTopLeftRadius = `${userInput}px`;
-});
+const title = document.createElement('h1')
+title.innerHTML = 'Border generator'
+title.style.marginBottom = "16px"
+main.prepend(title)
 
-containerInputs[3].addEventListener('change', (e) => {
-    let userInput = e.target.value
-    previewBorder.style.borderTopRightRadius = `${userInput}px`;
-});
+function inputChange(n, style) {
+    containerInputs[n].addEventListener('change', (e) => {
+        let userInput = e.target.value
+        previewBorder.style[style] = `${userInput}px`;
+    });
+}
 
-containerInputs[5].addEventListener('change', (e) => {
-    let userInput = e.target.value
-    previewBorder.style.borderBottomLeftRadius = `${userInput}px`;
-});
-
-containerInputs[7].addEventListener('change', (e) => {
-    let userInput = e.target.value
-    previewBorder.style.borderBottomRightRadius = `${userInput}px`;
-});
+inputChange(1,'borderTopLeftRadius')
+inputChange(3,'borderTopRightRadius')
+inputChange(5,'borderBottomLeftRadius')
+inputChange(7,'borderBottomRightRadius')
 
 btnCopy.addEventListener('click', () => {
     navigator.clipboard.writeText(previewBorder.getAttribute('style'));

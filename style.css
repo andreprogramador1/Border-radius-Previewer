@@ -1,1 +1,35 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: sans-serif;
+}
+
+main {
+  padding: 50px 100px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.container-user-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 1rem;
+}
+/*# sourceMappingURL=style.css.map */
