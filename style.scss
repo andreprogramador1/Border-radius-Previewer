@@ -12,11 +12,16 @@ body {
 main {
     padding: 50px 100px;
 }
-
 input {
-    padding: 5px;
     border: 1px solid #ccc;
 }
+
+.container-user-inputs {
+    input {
+        padding: 5px;
+    }
+}
+
 
 .container-user-inputs {
     display: flex;

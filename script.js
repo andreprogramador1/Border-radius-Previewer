@@ -11,7 +11,7 @@ main.prepend(title)
 function inputChange(n, style) {
     containerInputs[n].addEventListener('change', (e) => {
         let userInput = e.target.value
-        previewBorder.style[style] = `${userInput}px`;
+        previewBorder.style[style] = `${style == 'borderColor' ? userInput : userInput+'px'}`;
     });
 }
 
@@ -19,6 +19,8 @@ inputChange(1,'borderTopLeftRadius')
 inputChange(3,'borderTopRightRadius')
 inputChange(5,'borderBottomLeftRadius')
 inputChange(7,'borderBottomRightRadius')
+inputChange(9,'padding')
+inputChange(11,'borderColor')
 
 btnCopy.addEventListener('click', () => {
     navigator.clipboard.writeText(previewBorder.getAttribute('style'));
